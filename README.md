@@ -1,7 +1,12 @@
 # nipype_repro
+
 This is the MNL repository for the study: A re-executable GLM-based fMRI data analysis: replicating FSL through Nipype
 
-## Install Requirments
+## Analitical Requirments
+
+### fMRIPrep
+
+Information about fMRIPrep see [Here](https://fmriprep.org/en/stable/index.html). Using fMRIPrep within Docker see [here](https://www.nipreps.org/apps/docker/)
 
 ### FSL 6.0.4
 We install FSL 6.0.4. into our workstation environment by exectuing the following commands as root:  
