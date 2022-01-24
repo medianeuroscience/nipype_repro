@@ -2,7 +2,7 @@
 
 This is the MNL repository for the study: A re-executable GLM-based fMRI data analysis: replicating FSL through Nipype
 
-## Analitical Requirments
+## Set-ups
 
 ### fMRIPrep
 
@@ -20,8 +20,9 @@ PATH=${FSLDIR}/bin:${PATH}
 export FSLDIR PATH
 ```
 
-### Docker & 
-For our docker container, we rely on neurodocker to generate a dockerfile via the following command:
+### Docker & Nipype
+
+Our docker container is based on the [Neurodocker](https://github.com/ReproNim/neurodocker). Please install the _Neurodocker_ first, then use it to generate a dockerfile via the following command:
 ```
 neurodocker generate docker --base ubuntu:20.04 \
 --pkg-manager apt \
@@ -49,19 +50,14 @@ MATLABCMD="/opt/matlabmcr-2018a/v94/toolbox/matlab"
 
 This dockerfile is ready to be shared with the wider community. 
 
-Finally, we add our MNL/lab specific user and group IDs to avoid [file permission problems](https://vsupalov.com/docker-shared-permissions/). 
+Finally, we add our lab specific user and group IDs to avoid [file permission problems](https://vsupalov.com/docker-shared-permissions/). 
+
 Insert everything after the initial chmod 777 until mkdir -p. 
 
 ```
 && chmod 777 /opt && chmod a+s /opt \
-&& addgroup --gid 10000 lab \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 2002 rw \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10004 fhopp \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10017 mm \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10018 yc \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10020 sy \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10021 pw \
-&& adduser --disabled-password --gecos '' --gid 10000 --uid 10024 kw \
+&& addgroup # add your group ID if needed
+&& adduser # add user ID if needed, one line per user
 && mkdir -p /neurodocker \
 ```
 
@@ -70,3 +66,24 @@ Build the container:
 ```
 docker build - < Dockerfile
 ```
+## Download Notebooks
+
+You can download or clone our repository via:
+
+```
+git clone https://github.com/medianeuroscience/abcd_tutorial.git
+```
+
+## Run!
+
+### GLM
+
+To use our three GLM notebook, please use the following docker command:
+
+```
+docker run -it --rm -v {data path}:/home/{user}/data -v {output path}:/home/{user}/out -v .../nipype_repro:/home/{user}/nipype_repro -p 8888:8888 medianeuro/niflow:2.0 jupyter-lab --ip=0.0.0.0 --port=8888
+```
+
+### Comparison
+
+To compare outcomes, please run `nipype_fsl_comp.ipynb` and `shell_script.ipynb` outside of the docker above and within a python environment where [nltools](https://nltools.org/) is installed
