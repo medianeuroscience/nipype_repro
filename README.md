@@ -6,10 +6,10 @@ This is the MNL repository for the study: A re-executable GLM-based fMRI data an
 
 ### fMRIPrep
 
-Information about fMRIPrep see [Here](https://fmriprep.org/en/stable/index.html). Using fMRIPrep within Docker see [here](https://www.nipreps.org/apps/docker/)
+We used fMRIPrep [21.0.0](https://fmriprep.org/en/stable/changes.html#december-14-2021) for preprocessing. Information about fMRIPrep see [Here](https://fmriprep.org/en/stable/index.html). Using fMRIPrep within Docker see [here](https://www.nipreps.org/apps/docker/)
 
 ### FSL 6.0.4
-We install FSL 6.0.4. into our workstation environment by exectuing the following commands as root:  
+We install FSL 6.0.4. on our workstation environment by exectuing the following commands as root:  
 `curl -fsSL --retry 5 https://fsl.fmrib.ox.ac.uk/fsldownloads/fsl-6.0.4-centos6_64.tar.gz | tar -xz -C /usr/local/fsl --strip-components 1` 
 
 Thereafter, make sure each/your user has the following paths defined in their .bashrc:
