@@ -22,7 +22,7 @@ export FSLDIR PATH
 
 ### Docker & Nipype
 
-Our docker container (version: 20.10.12) is based on the [Neurodocker](https://github.com/ReproNim/neurodocker). Please install the _Neurodocker_ first, then use it to generate a dockerfile via the following command:
+Our docker container ([version: 20.10.12](https://docs.docker.com/engine/release-notes/#201012)) is based on the [Neurodocker](https://github.com/ReproNim/neurodocker). Please install the _Neurodocker_ first, then use it to generate a dockerfile via the following command:
 ```
 neurodocker generate docker --base ubuntu:20.04 \
 --pkg-manager apt \
