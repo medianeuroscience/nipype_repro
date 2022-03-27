@@ -68,7 +68,7 @@ docker build - < Dockerfile
 You can download or clone our repository via:
 
 ```
-git clone https://github.com/medianeuroscience/abcd_tutorial.git
+git clone https://github.com/medianeuroscience/nipype_repro.git
 ```
 
 ## Run!
