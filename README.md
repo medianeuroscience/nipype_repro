@@ -1,6 +1,7 @@
-# nipype_repro
+# Reproducing FSL's fMRI Data Analysis via Nipype: Relevance, Challenges, and Solutions
 
-This is the MNL repository for the study: A re-executable GLM-based fMRI data analysis: replicating FSL through Nipype
+This is the MNL repository for the study _Reproducing FSL's fMRI Data Analysis via Nipype: Relevance, Challenges, and Solutions_
+
 
 ## Set-ups
 
