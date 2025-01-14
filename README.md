@@ -1,7 +1,7 @@
 # Reproducing FSL's fMRI Data Analysis via Nipype: Relevance, Challenges, and Solutions
 
 This is the MNL repository for the study _Reproducing FSL's fMRI Data Analysis via Nipype: Relevance, Challenges, and Solutions_
-You can also find Google Slides walking through the process here [https://drive.google.com/drive/folders/1isZCz_YIFPb6u75GOcCM814hZi7kI_gB]
+You can also find the Google Slides tutorial here [https://drive.google.com/drive/folders/1isZCz_YIFPb6u75GOcCM814hZi7kI_gB]
 
 ## Set-ups
 
